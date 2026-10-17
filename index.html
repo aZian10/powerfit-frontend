@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema de control de acceso y membresías del gimnasio PowerFit.">
+  <title>PowerFit | Control de acceso</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="PowerFit inicio"><span class="brand-mark">P</span><span>Power<span class="accent">Fit</span></span></a>
+    <div class="header-info"><span class="status-dot"></span> Sistema de recepción</div>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <p class="eyebrow">CONTROL DE ACCESO</p>
+      <h1>Hola, recepcionista.</h1>
+      <p class="subtitle">Consulta el estado de una membresía y registra la entrada o salida de los miembros.</p>
+    </section>
+
+    <section class="search-card" aria-labelledby="search-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">VERIFICACIÓN</p><h2 id="search-title">Buscar miembro</h2></div>
+        <span class="icon-box" aria-hidden="true">⌕</span>
+      </div>
+      <form id="search-form">
+        <label for="documento">Número de documento</label>
+        <div class="search-row">
+          <input id="documento" name="documento" type="text" inputmode="numeric" placeholder="Ej. 1002345678" autocomplete="off" required>
+          <button type="submit">Consultar</button>
+        </div>
+        <p class="help-text">Ingresa el documento registrado del miembro.</p>
+      </form>
+      <div id="result" class="result hidden" aria-live="polite"></div>
+    </section>
+
+    <section class="bottom-grid">
+      <div class="panel">
+        <div class="section-heading">
+          <div><p class="eyebrow">MOVIMIENTOS</p><h2>Últimos registros</h2></div>
+          <span class="count" id="record-count">0 registros</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Miembro</th><th>Movimiento</th><th>Hora</th></tr></thead>
+            <tbody id="records-body"><tr class="empty-row"><td colspan="3">Todavía no hay movimientos registrados.</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <aside class="panel demo-panel">
+        <p class="eyebrow">PRUEBA DEL SISTEMA</p>
+        <h2>Datos de ejemplo</h2>
+        <p>Usa uno de estos documentos para probar la consulta.</p>
+        <button class="demo-button" data-document="1002345678"><span><strong>Laura Gómez</strong><small>1002345678</small></span><span class="pill active">Activa</span></button>
+        <button class="demo-button" data-document="1023456789"><span><strong>Andrés Pérez</strong><small>1023456789</small></span><span class="pill expired">Vencida</span></button>
+        <p class="notice">Los datos son ficticios y solo sirven para probar la interfaz.</p>
+      </aside>
+    </section>
+  </main>
+  <footer>PowerFit · Control de acceso de miembros</footer>
+  <script src="script.js"></script>
+</body>
+</html>
